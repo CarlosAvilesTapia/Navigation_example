@@ -2,4 +2,7 @@
     <string name="app_name">Navigation example</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_quot_kanji_identifier_quot_enter_your_name_to_start_playing">Welcome to \"Kanji identifier\". Enter your name to start playing</string>
+    <string name="name">Name</string>
+    <string name="start">Start</string>
 </resources>
