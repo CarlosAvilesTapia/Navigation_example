@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.navigationexample.databinding.FragmentFirstBinding;
 import com.example.navigationexample.databinding.FragmentSecondBinding;
@@ -76,6 +77,12 @@ public class SecondFragment extends Fragment {
             Bundle bundle = new Bundle();
 
             boolean answer = false;
+
+            if(binding.radioGroupAnswers1.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getContext(), R.string.debes_escoger_una_respuesta, Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             if(binding.radioGroupAnswers1.getCheckedRadioButtonId() == binding.alternative3.getId()) {
                 answer = true;
                 bundle.putBoolean("Answer", answer);
@@ -91,8 +98,6 @@ public class SecondFragment extends Fragment {
 
         });
 
-
         return binding.getRoot();
     }
 }
-

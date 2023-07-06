@@ -78,7 +78,6 @@ public class ThirdFragment extends Fragment {
                     navigate(R.id.action_thirdFragment_to_secondFragment, bundle);
         });
 
-
         return binding.getRoot();
     }
 }

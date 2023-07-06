@@ -16,4 +16,5 @@
     <string name="that_is_not_correct">"Que pena, no es correcto, "</string>
     <string name="do_it_again">. ¡Intenta de nuevo!</string>
     <string name="try_again">Reintentar</string>
+    <string name="debes_escoger_una_respuesta">You must choose an answer.</string>
 </resources>

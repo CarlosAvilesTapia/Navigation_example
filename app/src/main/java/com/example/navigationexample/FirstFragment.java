@@ -58,8 +58,6 @@ public class FirstFragment extends Fragment {
                     navigate(R.id.action_firstFragment_to_secondFragment, bundle);
         });
 
-
-
         return binding.getRoot();
     }
 }
