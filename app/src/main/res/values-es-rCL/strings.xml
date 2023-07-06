@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Navigation example</string>
+    <string name="welcome_to_quot_kanji_identifier_quot_enter_your_name_to_start_playing">Bienvenido a \"Kanji master\". Ingresa tu nombre para comenzar.</string>
+    <string name="start">Comenzar</string>
+    <string name="name">Nombre</string>
+    <string name="bienvenido">"Bienvenido, "</string>
+    <string name="love">Amor</string>
+    <string name="sadness">Tristeza</string>
+    <string name="dream">Sueño</string>
+    <string name="strength">Fuerza</string>
+    <string name="which_of_the_following_concepts_represents_this_kanji">¿Qué concepto representa este kanji?</string>
+    <string name="send">Enviar</string>
+    <string name="congratulations">"¡Felicitaciones, "</string>
+    <string name="you_are_a_kanji_expert">. Eres un experto en kanji!</string>
+    <string name="that_is_not_correct">"Que pena, no es correcto, "</string>
+    <string name="do_it_again">. ¡Intenta de nuevo!</string>
+    <string name="try_again">Reintentar</string>
+</resources>
