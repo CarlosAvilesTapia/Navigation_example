@@ -8,36 +8,37 @@
     tools:context=".SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/welcomeNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola, XXXX"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <ImageView
         android:id="@+id/imageQuestion1"
-        android:layout_width="367dp"
-        android:layout_height="284dp"
-        android:layout_marginTop="224dp"
+        android:layout_width="179dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/kanji"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeNameText"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/dream_kanji" />
 
     <RadioGroup
         android:id="@+id/radioGroupAnswers1"
-        android:layout_width="356dp"
-        android:layout_height="433dp"
-        android:layout_marginTop="176dp"
+        android:layout_width="212dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question1">
 
@@ -45,49 +46,52 @@
             android:id="@+id/alternative1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hola"
-            android:textSize="48sp" />
+            android:text="@string/love"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/alternative2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/sadness"
+            android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/alternative3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/dream"
+            android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/alternative4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/strength"
+            android:textSize="16sp" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/question1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:text="Como se llama este pokemon"
-        android:textSize="24sp"
+        android:layout_width="347dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/which_of_the_following_concepts_represents_this_kanji"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageQuestion1" />
 
     <Button
         android:id="@+id/answerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:text="Send"
+        android:layout_width="155dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/send"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

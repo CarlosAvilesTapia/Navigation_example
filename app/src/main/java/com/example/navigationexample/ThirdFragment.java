@@ -3,11 +3,13 @@ package com.example.navigationexample;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.navigationexample.databinding.FragmentSecondBinding;
 import com.example.navigationexample.databinding.FragmentThirdBinding;
 
 /**
@@ -50,12 +52,14 @@ public class ThirdFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam1 = getArguments().getString("Name");
+            mParam2 = getArguments().getString("FinalAnswer");
+
         }
     }
 
@@ -63,6 +67,20 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+
+        binding = FragmentThirdBinding.inflate(getLayoutInflater());
+
+        binding.resultText.setText(mParam2);
+
+        binding.tryAgainButton.setOnClickListener(v -> {
+
+            Bundle bundle = new Bundle();
+            bundle.putString("Name", mParam1);
+            Navigation.findNavController(getView()).
+                    navigate(R.id.action_thirdFragment_to_secondFragment, bundle);
+        });
+
+
+        return binding.getRoot();
     }
 }

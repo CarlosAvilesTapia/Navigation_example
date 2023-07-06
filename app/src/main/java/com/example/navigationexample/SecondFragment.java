@@ -3,11 +3,13 @@ package com.example.navigationexample;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.navigationexample.databinding.FragmentFirstBinding;
 import com.example.navigationexample.databinding.FragmentSecondBinding;
 
 /**
@@ -18,6 +20,8 @@ import com.example.navigationexample.databinding.FragmentSecondBinding;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    private final int checkedId = -1;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -53,7 +57,7 @@ public class SecondFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam1 = getArguments().getString("Name");
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
@@ -62,6 +66,33 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+
+        binding = FragmentSecondBinding.inflate(getLayoutInflater());
+
+        binding.welcomeNameText.setText(getString(R.string.bienvenido) + mParam1);
+
+        binding.answerButton.setOnClickListener(v -> {
+
+            Bundle bundle = new Bundle();
+
+            boolean answer = false;
+            if(binding.radioGroupAnswers1.getCheckedRadioButtonId() == binding.alternative3.getId()) {
+                answer = true;
+                bundle.putBoolean("Answer", answer);
+                bundle.putString("FinalAnswer", "Congratulations, " + mParam1 + ". You are a Kanji expert!");
+                Navigation.findNavController(getView()).
+                        navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
+            } else {
+                bundle.putBoolean("Answer", answer);
+                bundle.putString("FinalAnswer", "That is not correct, " + mParam1 + ". Do it again!");
+                Navigation.findNavController(getView()).
+                        navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
+            }
+
+        });
+
+
+        return binding.getRoot();
     }
 }
+
