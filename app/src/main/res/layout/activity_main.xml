@@ -8,7 +8,9 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment1Container"
-        android:name="com.example.navigationexample.FirstFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_file"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
